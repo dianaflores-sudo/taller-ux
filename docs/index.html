@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Notas Accesible</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <!-- Imagen en línea funcional (o usa img/banner-notas.png) -->
+    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&q=80" alt="Cuaderno y bolígrafo sobre un escritorio ordenado">
+    
+    <h1>Gestor de Notas Personal</h1>
+    <p class="ayuda">Organiza tus tareas diarias de forma sencilla. Todos los campos son obligatorios.</p>
+
+    <form id="form-notas" novalidate>
+      <fieldset>
+        <legend>1. Crear nueva nota</legend>
+        
+        <label for="titulo-nota">Título de la nota</label>
+        <input id="titulo-nota" type="text" placeholder="Ej. Repasar para el examen" required>
+
+        <label for="categoria-nota">Categoría</label>
+        <select id="categoria-nota" required>
+          <option value="">Selecciona una categoría</option>
+          <optgroup label="Académico">
+            <option value="Estudios">Estudios</option>
+            <option value="Laboratorio">Laboratorio</option>
+          </optgroup>
+          <optgroup label="Personal">
+            <option value="Trabajo">Trabajo</option>
+            <option value="Hogar">Hogar</option>
+          </optgroup>
+        </select>
+
+        <label for="contenido-nota">Contenido</label>
+        <textarea id="contenido-nota" rows="3" placeholder="Escribe el detalle de tu nota..." required></textarea>
+      </fieldset>
+
+      <p id="mensaje-estado" class="mensaje" role="status"></p>
+
+      <div class="acciones">
+        <button type="submit" class="boton-principal">Guardar Nota</button>
+        <button type="reset" class="boton-secundario">Limpiar campos</button>
+      </div>
+    </form>
+
+    <section class="seccion-lista">
+      <h2>2. Mis notas guardadas</h2>
+      <div id="contenedor-notas" class="contenedor-notas"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
